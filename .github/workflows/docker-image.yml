@@ -32,6 +32,6 @@ jobs:
           build-args: |
             PRESTO_VERSION=0.273.2
           platforms: linux/amd64,linux/arm64
-          tags: singtingtech/prestodb:latest
+          tags: crisprime/prestodb:latest
           secrets: |
             "github_token=${{ secrets.GITHUB_TOKEN }}"
