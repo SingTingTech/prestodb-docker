@@ -19,8 +19,8 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          build-args:
-            - PRESTO_VERSION=0.273.2
+          build-args: |
+            PRESTO_VERSION=0.273.2
           platforms: linux/amd64,linux/arm64
           tags: singtingtech/prestodb:latest
           secrets: |
