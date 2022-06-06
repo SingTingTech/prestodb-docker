@@ -8,7 +8,6 @@ ARG PRESTO_BIN=https://repo1.maven.org/maven2/com/facebook/presto/presto-server/
 
 
 
-ADD sources.list /etc/apt/
 # Update the base image OS and install wget and python
 RUN apt-get update
 RUN apt-get install -y wget python less
