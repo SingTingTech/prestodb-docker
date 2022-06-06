@@ -17,7 +17,7 @@ RUN wget --quiet ${PRESTO_BIN}
 RUN mkdir -p /opt
 RUN tar -xf presto-server-${PRESTO_VERSION}.tar.gz -C /opt
 RUN rm presto-server-${PRESTO_VERSION}.tar.gz
-RUN ln -s /opt/presto-server-${PRESTO_VERSION} /opt/presto
+RUN mv /opt/presto-server-${PRESTO_VERSION} /opt/presto
 
 # Copy configuration files on the host into the image
 COPY etc /opt/presto/etc
