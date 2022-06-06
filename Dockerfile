@@ -12,12 +12,12 @@ ARG PRESTO_BIN=https://repo1.maven.org/maven2/com/facebook/presto/presto-server/
 RUN apt-get update
 RUN apt-get install -y wget python less
 
-# Download Presto and unpack it to /opt/presto
-RUN wget --quiet ${PRESTO_BIN}
 RUN mkdir -p /opt
-RUN tar -xf presto-server-${PRESTO_VERSION}.tar.gz -C /opt
-RUN rm presto-server-${PRESTO_VERSION}.tar.gz
-RUN mv /opt/presto-server-${PRESTO_VERSION} /opt/presto
+# Download Presto and unpack it to /opt/presto
+RUN wget --quiet ${PRESTO_BIN} \ 
+        && tar -xf presto-server-${PRESTO_VERSION}.tar.gz -C /opt \
+        && rm presto-server-${PRESTO_VERSION}.tar.gz \
+        && mv /opt/presto-server-${PRESTO_VERSION} /opt/presto
 
 # Copy configuration files on the host into the image
 COPY etc /opt/presto/etc
